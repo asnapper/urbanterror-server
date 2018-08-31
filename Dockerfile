@@ -7,8 +7,7 @@ RUN apt-get install -y libxml2-utils curl
 
 WORKDIR /ut
 ADD updater-cfg .
-RUN curl -sSL -o UrTUpdater_Ded.sh 'https://raw.githubusercontent.com/FrozenSand/UrTUpdater/master/ded/UrTUpdater_Ded.sh'
-RUN bash ./UrTUpdater_Ded.sh -q
+RUN curl -sSL 'https://raw.githubusercontent.com/FrozenSand/UrTUpdater/master/ded/UrTUpdater_Ded.sh' | bash -s -- -q
 
 FROM scratch
 
